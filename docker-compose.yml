@@ -1,0 +1,12 @@
+services:
+  database:
+    container_name: on-boarding-java
+    image: mariadb:11.4
+    restart: no
+    ports:
+      - "${DATABASE_PORT}:3306"
+    environment:
+      MARIADB_USER: "${DATABASE_USER}"
+      MARIADB_PASSWORD: "${DATABASE_PASSWORD}"
+      MARIADB_ROOT_PASSWORD: "${DATABASE_ROOT_PASSWORD}"
+      MARIADB_DATABASE: "${DATABASE_NAME}"

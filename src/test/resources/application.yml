@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:tc:mariadb:11.4:///java-board-test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+
+  flyway:
+    enabled: false
+
+  jpa:
+    database-platform: com.example.java_board._core.config.CustomMariaDBDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop # 테스트 환경 데이터베이스 스키마 자동 생성 및 삭제
+    properties:
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+        show_sql: true
